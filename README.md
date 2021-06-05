@@ -1,10 +1,8 @@
-# Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild
-#### [Demo](http://www.robots.ox.ac.uk/~vgg/blog/unsupervised-learning-of-probably-symmetric-deformable-3d-objects-from-images-in-the-wild.html) | [Project Page](https://elliottwu.com/projects/unsup3d/) | [Video](https://www.youtube.com/watch?v=5rPJyrU-WE4) | [Paper](https://arxiv.org/abs/1911.11130)
-[Shangzhe Wu](https://elliottwu.com/), [Christian Rupprecht](https://chrirupp.github.io/), [Andrea Vedaldi](http://www.robots.ox.ac.uk/~vedaldi/), Visual Geometry Group, University of Oxford. In CVPR 2020 (Best Paper Award).
+# Photo-geometric AutoEncoding+
+Hangil.Park
 
-<img src="./img/teaser.jpg" width="800">
 
-We propose a method to learn weakly symmetric deformable 3D object categories from raw single-view images, without ground-truth 3D, multiple views, 2D/3D keypoints, prior shape models or any other supervision.
+All of this setup process below are from original github repository.
 
 
 ## Setup (with [Anaconda](https://www.anaconda.com/))
@@ -41,13 +39,6 @@ python setup.py install
 ```
 
 
-### 4. (For demo only) Install [facenet-pytorch](https://github.com/timesler/facenet-pytorch):
-This package is optional for the demo. It allows automatic human face detection.
-```
-pip install facenet-pytorch
-```
-
-
 ## Datasets
 1. [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) face dataset. Please download the original images (`img_celeba.7z`) from their [website](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) and run `celeba_crop.py` in `data/` to crop the images.
 2. Synthetic face dataset generated using [Basel Face Model](https://faces.dmi.unibas.ch/bfm/). This can be downloaded using the script `download_synface.sh` provided in `data/`.
@@ -62,12 +53,6 @@ Download pretrained models using the scripts provided in `pretrained/`, eg:
 cd pretrained && sh download_pretrained_celeba.sh
 ```
 
-
-## Demo
-```
-python -m demo.demo --input demo/images/human_face --result demo/results/human_face --checkpoint pretrained/pretrained_celeba/checkpoint030.pth
-```
-
 *Options*:
 - `--gpu`: enable GPU
 - `--detect_human_face`: enable automatic human face detection and cropping using [MTCNN](https://arxiv.org/abs/1604.02878) provided in [facenet-pytorch](https://github.com/timesler/facenet-pytorch). This does not work on cat images. You will need to manually crop the images instead.
@@ -78,15 +63,4 @@ python -m demo.demo --input demo/images/human_face --result demo/results/human_f
 Check the configuration files in `experiments/` and run experiments, eg:
 ```
 python run.py --config experiments/train_celeba.yml --gpu 0 --num_workers 4
-```
-
-
-## Citation
-```
-@InProceedings{Wu_2020_CVPR,
-  author = {Shangzhe Wu and Christian Rupprecht and Andrea Vedaldi},
-  title = {Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild},
-  booktitle = {CVPR},
-  year = {2020}
-}
 ```
