@@ -2,7 +2,7 @@
 Hangil.Park
 
 
-All of this setup process below are from original github repository.
+All of this setup process below are from [original github repository](https://github.com/elliottwu/unsup3d).
 
 
 ## Setup (with [Anaconda](https://www.anaconda.com/))
