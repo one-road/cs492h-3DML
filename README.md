@@ -48,10 +48,7 @@ Please remember to cite the corresponding papers if you use these datasets.
 
 
 ## Pretrained Models
-Download pretrained models using the scripts provided in `pretrained/`, eg:
-```
-cd pretrained && sh download_pretrained_celeba.sh
-```
+Download pretrained models from [google drive](https://drive.google.com/drive/folders/1DispQo6-fBWRycU9amvarYL0zC1X8Hd5?usp=sharing)
 
 *Options*:
 - `--gpu`: enable GPU
